@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.6.4.js"></script>
+    <script lang="java">
+        $(function(){
+            $("textarea").keyup(function(){
+                //남은 글자수
+                var inputlength = $(this).val().length;
+                var remain = 150 - inputlength;
+                $("h1").html(remain)
+                if(remain >= 0){
+                    $("h1").css("color", "green")
+                }else{
+                    $("h1").css("color", "lightgreen")
+                }
+            })
+            $("html, body").keydown(function(e){
+                if(e.keyCode == 65){
+                    alert("a를 누르셨습니다.")
+                }
+            })
+        })//jq  
+    </script>
+</head>
+<body>
+    <p>안녕하세요</p>
+    <h1>150</h1>
+    <textarea name="" id="" cols="70" rows="5"></textarea>
+</body>
+</html>

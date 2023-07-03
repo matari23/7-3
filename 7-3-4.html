@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.6.4.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            var div = $("#box");
+            // var div = document.getElementById("box")
+            var clearbtn = $("#clearbtn");
+            var result = $("#result");
+
+            div.click(function(e){
+
+
+                $(this).html(
+                    "screen:" + e.screenX + "/" + e.screenY + "<br>" + 
+                    "page : " + e.pageX + "/" + e.pageY + "<br>" +
+                    "offset : " + e.offsetX + "/" + e.offsetY + "<br>" +
+                    "client : " + e.clientX + "/" + e.clientY + "<br>"
+                    )
+
+            })/* div click */
+
+            // div.addEventListener("click", function(e))
+        })/* jQuery Close */
+
+    </script>
+    
+    <style type="text/css">
+        #box{width: 200px; height: 200px; background-color: lemonchiffon; margin: 100px;}
+    </style>
+
+</head>
+<body>
+    <div id="box">
+    </div><!-- box -->
+
+    <input type="button" id="clearbtn" value="Clear">
+
+    <div id="result">
+
+    </div><!-- result -->
+</body>
+</html>

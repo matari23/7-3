@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.6.4.js"></script>
+    <script lang="java">
+        $(function(){
+            $(window).scroll(function(){
+                var top =  $(window).scrollTop();
+                console.log(top);
+                // if(top >=100){
+                //     $(".header .f_nav.top").addClass("top");
+                // }else{
+                //     $(".header .f_nav.top").removeClass("top");
+                // }
+                if(top >=1500){
+                    $(".header .nav").css("background", "coral")
+                }else if(top >=1000){
+                    $(".header .nav").css("background", "purple")
+                    
+                }else if(top >=500){
+                    $(".header .nav").css("background", "pink")
+                    
+                }
+            })//scroll
+        })//jq
+
+    </script>
+    <style type="text/css">
+        .header{
+            height: 100px;
+            width: 100%;
+            position: fixed;
+        }
+        .header .nav{
+            height: 100px;
+            width: 100%;
+            background-color: rgb(225, 157, 234);
+            position: absolute;
+        }
+        .header .f_nav{
+            height: 100px;
+            width: 100%;
+            background-color: skyblue;
+            top: -110px;
+            position: absolute;
+            transition: all 0.3s;
+        }
+        .header .f_nav.top{
+            top: 0;
+        }
+        .contents{
+            background-color: #f1f1f1;
+            height: 3000px;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">메뉴</nav>
+        <nav class="f_nav">메뉴</nav>
+    </header><!-- header -->
+    <div class="contents">
+        contents
+    </div><!-- contents -->
+</body>
+</html>

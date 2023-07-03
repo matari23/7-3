@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.6.4.js"></script>
+    <script lang="java">
+        $(function(){
+
+        })//jq
+        $(window).scroll(function(){
+            var left = $(this).scrollLeft();
+            console.log(left)
+        })
+    </script>
+    <style type="text/css">
+        *{margin: 0; padding: 0;}
+        #wrap{width: 400%; height: 100vh;}
+        #wrap>div{width: calc(100% / 4); height: 100vh; float: left;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="cont1" style="background: rgb(241, 252, 218);">1</div>
+        <div class="cont2" style="background: rgb(124, 124, 222);">2</div>
+        <div class="cont3" style="background: rgb(230, 191, 191);">3</div>
+        <div class="cont4" style="background: rgb(211, 233, 217);">4</div>
+    </div><!-- wrap -->
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.6.4.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $("h1").click(function(){
+                $(this).html(function(index,html){
+                    return html + "★"
+                })
+            })/* h1 click */
+
+            // trigger :강제로 이벤트를 실행시킴
+            setInterval(function(){
+                $("h1").last().trigger("click")
+            },1000)
+
+            $("a").click(function(e){
+                $(this).css("background", "lightgreen")
+                e.stopPropagation()
+                e.preventDefault()
+            })/* a click */
+
+            $("h2").click(function(){
+                $(this).css("background", "red")
+            })/* h2 click */
+        })/* jQuery Close */
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <h1>start :</h1>    
+    <h1>start :</h1>    
+    <h2><a href="http://www.naver.com">네이버</a></h2>
+</body>
+</html>

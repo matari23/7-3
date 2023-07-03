@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-3.6.4.js"></script>
+    <script lang="java">
+        $(function(){
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d")
+
+            $(canvas).on({
+                mousedown : function(e){
+                    console.log(e);
+                    var position = $(this).offset()
+                    console.log(position);
+                    var x = e.pageX - position.left
+                    var y = e.pageY - position.top;
+
+                    context.beginPath();
+                    context.strokeStyle = "blue";
+                    context.lineWidth = "10"
+                    context.moveTo(x,y)
+
+
+                },
+                mouseup : function(e){
+                    console.log(e)
+                    var position = $(this).offset()
+                    console.log(position);
+                    var x = e.pageX - position.left
+                    var y = e.pageY - position.top;
+
+                    context.lineTo(x,y);
+                    context.stroke()
+                },
+            })
+
+        })//jq
+    </script>
+
+</head>
+<body>
+    <canvas id="canvas" width="700" height="400" style="border: 3px solid black;"></canvas>
+</body>
+</html>
